@@ -1,0 +1,73 @@
+/* One stylesheet for all pages. No webfonts, no JS, no external requests:
+   the system UI stack is already installed on every device that will read
+   these, and a legal page that depends on a CDN is a legal page that can
+   fail to load. */
+
+:root {
+  color-scheme: light dark;
+  --fg: #16161a;
+  --muted: #5d5d6b;
+  --bg: #fbfbfd;
+  --rule: #e4e4ec;
+  --accent: #2a2ad8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #ececf1;
+    --muted: #9d9daa;
+    --bg: #101014;
+    --rule: #26262e;
+    --accent: #a8a8ff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 4rem 16px 6rem;
+}
+
+h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 .35rem; }
+h2 { font-size: 1.12rem; letter-spacing: -.01em; margin: 2.75rem 0 .6rem; }
+h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+
+.date { color: var(--muted); font-size: .9rem; margin: 0 0 2.5rem; }
+.lede { font-size: 1.12rem; }
+.muted { color: var(--muted); }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+ul { padding-left: 1.25rem; }
+li { margin: .4rem 0; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: .95rem;
+  display: block;
+  overflow-x: auto;
+}
+th, td {
+  text-align: left;
+  padding: .6rem .8rem .6rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+th { font-weight: 600; }
+
+footer { margin-top: 3.5rem; color: var(--muted); font-size: .9rem; }
