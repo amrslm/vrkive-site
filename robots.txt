@@ -1,0 +1,11 @@
+# Nothing here should appear in search results. That is enforced by a
+# <meta name="robots" content="noindex, nofollow"> on every page, which is
+# the only method available on GitHub Pages (no control over response
+# headers, so no X-Robots-Tag).
+#
+# Crawling is therefore ALLOWED on purpose: a crawler has to be able to
+# fetch a page to read the noindex tag and drop it. "Disallow: /" would
+# block the fetch, and a blocked URL can still be listed in search results
+# as a bare link with no snippet — the opposite of what is wanted here.
+User-agent: *
+Allow: /
