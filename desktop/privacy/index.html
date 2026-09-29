@@ -13,7 +13,7 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="date">Desktop for iOS · Effective 28 September 2026</p>
+<p class="date">Desktop for iOS · Effective 29 September 2026</p>
 
 <p class="lede">Desktop is a place to keep the things you save. Your library lives on your
 device. There is no account to create, and nothing you save is ever tied to your identity —
@@ -43,8 +43,9 @@ We do not sell or rent information about you, because we do not hold any.</p>
       behind the free allowance).</li>
 </ul>
 <p>Saved media is written to Desktop's own app container and to the App Group container it
-shares with its share extension. Nothing in your library is uploaded to us, and there is no
-backup or sync service of ours holding a copy.</p>
+shares with its share extension. We run no backup or sync service, and we hold no copy of your
+library. The one exception is automatic topic sorting, which — only if you turn it on — sends
+individual saves for classification; that is described in full below.</p>
 
 <h2>What leaves your device</h2>
 <p>Four things, in specific moments. None of them carries an identifier for you or your device.</p>
@@ -59,9 +60,17 @@ preview itself, so that request goes to the site directly and not through us.</p
 succeeded — never the full address.</p>
 
 <h3>2. Sorting a save onto the right Desktop</h3>
-<p>Desktop files each save under a topic automatically. To do that it sends a short description of
-the item to our <em>classify</em> service, which passes it to a hosted AI model and gets back a
-single topic word. What gets sent depends on what you saved:</p>
+<p>Desktop can file each save under a topic for you. <strong>This is off until you turn it
+on.</strong> Desktop asks you once, the first time you open the Topics view, and does not send
+anything for sorting unless you agree. Agreeing applies from that point forward: saves already in
+your library are not sent, and stay in Unsorted until you file them yourself. You can change your
+mind at any time under <em>Automatic Sorting</em> in the app's menu; turning it off stops all
+further sending, and topics already assigned stay as they are. Turning it back on later sorts what
+you save from then on, not what accumulated while it was off. With it off, your saves still
+group by app and you can choose topics yourself.</p>
+<p>When it is on, Desktop sends a short description of the item to our <em>classify</em> service,
+which passes it to a hosted AI model and gets back a single topic word. What gets sent depends on
+what you saved:</p>
 <table>
   <tr><th>If you saved…</th><th>Desktop sends…</th></tr>
   <tr>
@@ -78,12 +87,17 @@ single topic word. What gets sent depends on what you saved:</p>
 videos</strong> — is transmitted off your device. It is used for nothing but choosing the topic
 word. We store none of it: the service holds it only for the moment it takes to answer, and its
 logs record only the source type, the model used and the outcome.</p>
-<p>The request is passed to a hosted model provider (Anthropic or OpenAI, depending on
-configuration). They do not use it to train their models. They may retain it briefly for their
+<p>The request is passed to a hosted model provider (currently OpenAI; if that ever changes we
+will update this policy before it does). They do not use it to train their models. They may retain it briefly for their
 own abuse monitoring before deleting it. Because that window is longer than the request itself,
 we disclose this as data collection on the App Store rather than treat it as purely transient.</p>
-<p>No account, device identifier or IP-derived profile accompanies the request, so neither we nor
-the model provider can attribute it to you or join it to anything else you saved.</p>
+<p>No account, user ID or device identifier accompanies the request, and we attach nothing that
+would let it be joined to anything else you saved. We want to be precise rather than reassuring
+about what that does and does not mean: it means we do not label the request with who you are.
+It does not mean the content itself is anonymous. A screenshot, caption or photo can contain a
+name, a face, an address or a private conversation, and stripping identifiers from the request
+does not remove any of that from the picture. That is the honest reason this is a choice you make
+rather than something Desktop does on your behalf.</p>
 
 <h3>3. Checking the app's configuration</h3>
 <p>Desktop asks our <em>config</em> service for current settings, such as the size of the free
@@ -113,7 +127,10 @@ you choose each one, and Desktop receives only what you shared with it.</p>
 
 <h2>Deleting your data</h2>
 <ul>
-  <li>Delete any saved item, or a whole folder, inside the app.</li>
+  <li>Delete any saved item inside the app. Deleting it removes the item and its media —
+      including any reduced copy kept for sorting — from your device.</li>
+  <li>Deleting a <em>folder</em> removes only the grouping. The saves inside it stay in your
+      library; delete them individually to remove their content.</li>
   <li>Delete Desktop from your phone to remove its library, media and settings entirely.</li>
 </ul>
 <p>Since we hold no library and no account, there is nothing for us to delete on your behalf and
@@ -128,6 +145,12 @@ under 13. Desktop can display the pages and posts you save, which come from the 
 App Store age rating reflects that its content is not filtered by us.</p>
 
 <h2>Changes</h2>
+<p><strong>29 September 2026:</strong> automatic topic sorting now requires your explicit
+permission and can be turned off at any time; previously it ran by default. Clarified that a
+saved item's content can itself contain personal information even though we attach no identifier
+to it, and that deleting a folder does not delete the saves inside it. The permission is asked
+when you first open Topics rather than during setup, applies only to saves made after you agree,
+and the model provider is named directly.</p>
 <p>If this policy changes in a way that affects what leaves your device, we will update the
 effective date above and describe the change here. Material changes will be noted in the app's
 release notes rather than made quietly.</p>
