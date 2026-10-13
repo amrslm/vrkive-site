@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Desktop — Privacy Policy</title>
-<meta name="description" content="How Desktop for iOS handles your data: no account, no tracking, and a library that stays on your device. Published by VRKIVE LLC.">
+<meta name="description" content="How Desktop for iOS handles your data: no tracking, a library that stays on your device, and optional sync and folder sharing that are encrypted before they leave it. Published by VRKIVE LLC.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -13,11 +13,12 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="date">Desktop for iOS · Effective 29 September 2026</p>
+<p class="date">Desktop for iOS · Effective 13 October 2026</p>
 
 <p class="lede">Desktop is a place to keep the things you save. Your library lives on your
-device. There is no account to create, and nothing you save is ever tied to your identity —
-because Desktop never learns it.</p>
+device. There is no account to create, and nothing you save is tied to your identity. If you
+turn on sync, an optional Premium feature, your library is encrypted on your device before it
+leaves, so the copy we store is one we cannot read.</p>
 
 <p>This policy explains exactly what stays on your phone, the few things that leave it and why,
 and who else is involved when you view something you saved. It describes the app as it actually
@@ -26,12 +27,13 @@ works, not a category of app in general.</p>
 <p>Desktop is published by <strong>VRKIVE LLC</strong>. "We" and "us" below mean VRKIVE LLC.</p>
 
 <h2>No account, no identifiers</h2>
-<p>Desktop has no sign-up, sign-in, profile or cloud library. It does not assign you a user ID.
-It does not read your device's advertising identifier or vendor identifier. It contains no
-analytics, attribution or crash-reporting service, and no third-party SDKs at all.</p>
+<p>Desktop has no sign-up, sign-in, profile or cloud library until you turn on sync, and most
+people never will. It does not assign you a user ID. It does not read your device's advertising
+identifier or vendor identifier. It contains no analytics, attribution or crash-reporting
+service, and no third-party SDKs at all.</p>
 <p><strong>Desktop does not track you</strong> as the App Store defines tracking: nothing it
 sends is linked to you or your device, and nothing is shared with data brokers or advertisers.
-We do not sell or rent information about you, because we do not hold any.</p>
+We do not sell or rent information about you.</p>
 
 <h2>What stays on your device</h2>
 <p>All of it, unless this policy says otherwise. Specifically:</p>
@@ -43,13 +45,14 @@ We do not sell or rent information about you, because we do not hold any.</p>
       behind the free allowance).</li>
 </ul>
 <p>Saved media is written to Desktop's own app container and to the App Group container it
-shares with its share extension. We run no backup or sync service, and we hold no copy of your
-library. Photos and videos you save from your own library stay here and are never sent anywhere.
+shares with its share extension. Unless you turn on sync, we hold no copy of your library.
+Videos you save stay here in every case and are never sent anywhere, sync or not.
 The one exception to this section is automatic topic sorting, which sends details of a saved post
 or link for classification; that is described in full below.</p>
 
 <h2>What leaves your device</h2>
-<p>Four things, in specific moments. None of them carries an identifier for you or your device.</p>
+<p>Four things, in specific moments. None of them carries an identifier for you or your device.
+Sync and folder sharing, if you use them, are described in their own sections below.</p>
 
 <h3>1. Fetching details about a link you saved</h3>
 <p>When you save a link, Desktop needs its title, creator and cover image to show you a real card
@@ -118,11 +121,64 @@ IP address and any cookies your device already holds for it, and what they do wi
 governed by <em>their</em> privacy policies rather than this one. Desktop adds no identifier of
 its own to these requests and cannot see their contents.</p>
 
+<h2>Sync (optional, Premium, end-to-end encrypted)</h2>
+<p>Sync keeps your library the same on every device you use. It is off until you open the Sync
+screen in the menu and sign in with Apple, and it is only offered to subscribers. Until you do
+that, nothing in this section applies to you.</p>
+<p><strong>Encrypted on your device.</strong> Before anything leaves your phone, Desktop encrypts
+it with a key that only your devices hold: your saved links with their titles, captions, creators
+and topics; your screenshots and photos saved from your own library; the frame used as a video's
+cover; your folders, their names and which saves are in them. We store that encrypted copy and
+cannot read it. Videos themselves are never uploaded and stay on the device that saved them.</p>
+<p><strong>What we can see.</strong> Encryption hides what you saved, not that you use sync. Our
+service can see an identifier for your account and for each record, whether a record is a save,
+a folder or a folder membership, when records change or are deleted, how large the encrypted
+files are, and when your devices sync.</p>
+<p><strong>The key.</strong> The key is made on your device the first time you sync and reaches
+your other devices only through iCloud Keychain. It is never sent to us. If every copy of it is
+lost, we cannot recover your synced library; the library on your phone is unaffected, and
+deleting your sync account lets you start a fresh copy from it.</p>
+<p><strong>Signing in.</strong> Desktop asks Apple for a sign-in only, not your name or email
+address. Apple gives our sign-in service a stable identifier for you, unique to Desktop, which we
+use only to tell your encrypted library apart from everyone else's.</p>
+<p><strong>Confirming the subscription.</strong> When you sign in, and from time to time after,
+the signed transaction Apple gives your device is sent to our service so it can confirm that the
+subscription is active before accepting your data. We keep the product, its expiry and Apple's
+transaction identifier for it; it carries no payment details.</p>
+<p><strong>Where it lives.</strong> On Supabase, in the United States, under an account we hold
+with them. It is reachable only through your sign-in and only while your subscription is
+active.</p>
+<p><strong>Deleting it.</strong> Tap Delete Account on the Sync screen and everything synced is
+removed at once. Sign Out stops sync but leaves what is already there. If your subscription ends,
+sync pauses and the data is deleted 90 days later unless you subscribe again. Deleting the app
+alone does not delete the synced copy; use Delete Account first.</p>
+
+<h2>Sharing a folder</h2>
+<p>You can share any folder as a link, whether or not you subscribe. Nothing is shared until you
+choose <em>Share Folder</em> and send the link yourself.</p>
+<p><strong>What is in it.</strong> The folder's name and emoji, and for each saved link: its
+address, title, caption, creator, the details Desktop shows on its card, and a small cover
+image. Photos, screenshots and videos from your own library are never included.</p>
+<p><strong>Encrypted on your device.</strong> The folder is encrypted on your phone with a new
+key for each link. The encrypted copy is uploaded to our <em>share</em> service; the key travels
+only inside the link, in the part after the <span class="muted">#</span>, which browsers and apps
+never send to a server. We store the encrypted copy and cannot read it. Anyone you give the link
+to, and anyone they pass it on to, can open the folder.</p>
+<p><strong>No account.</strong> Uploading a folder carries no account or device identifier. To
+limit abuse, the service counts uploads per network address for an hour, using a scrambled form
+of the address that changes every hour and is deleted after two.</p>
+<p><strong>Opening a link.</strong> In Desktop, the folder is downloaded and decrypted on the
+recipient's device. On the web, the page at arkive.tech decrypts it in the browser; that page is
+hosted by GitHub, which receives the visitor's network address as for any website.</p>
+<p><strong>How long it lasts.</strong> A link works for 30 days. After that our service stops
+serving it and deletes the encrypted copy at its next cleanup. Anyone who added the folder to their own Desktop keeps their
+copy.</p>
+
 <h2>Subscriptions and payment</h2>
 <p>Desktop's subscription is sold through the App Store. Apple handles the entire transaction.
 We never receive or have access to your payment method, card number or billing address. The app
 only asks iOS on your device whether a subscription is currently active; that answer never leaves
-your phone.</p>
+your phone, except as part of turning on sync, described above.</p>
 <p>Your count of saved items is also kept in your device's keychain, so that reinstalling the app
 doesn't hand out a fresh set of free saves. It is stored only on that device, is never
 synchronised to iCloud or to us, and is a number — it contains nothing about what you saved.</p>
@@ -140,11 +196,13 @@ you choose each one, and Desktop receives only what you shared with it.</p>
       library; delete them individually to remove their content.</li>
   <li>Delete Desktop from your phone to remove its library, media and settings entirely.</li>
 </ul>
-<p>Since we hold no library and no account, there is nothing for us to delete on your behalf and
-no account deletion request to make. The only value that deliberately outlives an uninstall is
-the lifetime save count described above.</p>
+<p>If you never turned on sync, we hold no library and no account, so there is nothing for us to
+delete on your behalf and no account deletion request to make. If you did, Delete Account on the
+Sync screen removes everything synced immediately; no request to us is needed. A shared folder's
+encrypted copy is deleted after its link expires at 30 days. The only value that deliberately
+outlives an uninstall is the lifetime save count described above.</p>
 <p>If you'd like confirmation of any of this, or want to ask what we hold about you, write to us
-at the address below. The honest answer will normally be "nothing".</p>
+at the address below.</p>
 
 <h2>Children</h2>
 <p>Desktop is not directed at children and we do not knowingly collect information from anyone
@@ -152,6 +210,11 @@ under 13. Desktop can display the pages and posts you save, which come from the 
 App Store age rating reflects that its content is not filtered by us.</p>
 
 <h2>Changes</h2>
+<p><strong>13 October 2026:</strong> added sync, an optional Premium feature that is off until
+you sign in with Apple on the Sync screen, and folder sharing. Both are encrypted on your device
+before anything is uploaded; the new sections describe what is stored, what we can and cannot
+see, and how it is deleted. For anyone who uses neither, nothing about what leaves the device has
+changed.</p>
 <p><strong>29 September 2026:</strong> automatic topic sorting no longer sends photos or videos
 from your own library. Only saved posts and links are sent for sorting, and only the details that
 were already public at the address you saved them from; camera-roll media now stays on your device
