@@ -162,7 +162,7 @@ async function open() {
   } catch {
     return fail("Couldn't load this folder. Check your connection and try again.");
   }
-  if (response.status === 404) return fail("The person who shared this folder has stopped sharing it.");
+  if (response.status === 404) return fail("This link has expired. Shared folder links last 30 days, so ask for a new one.");
   if (!response.ok) return fail("Couldn't load this folder. Try again in a moment.");
 
   let folder;
