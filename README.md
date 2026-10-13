@@ -13,27 +13,13 @@ index.html                 /                  INTENTIONALLY BLANK
 404.html                                      intentionally blank
 desktop/privacy/index.html /desktop/privacy   App Store Connect Privacy Policy URL
 desktop/support/index.html /desktop/support   App Store Connect Support URL
-.well-known/apple-app-site-association          universal links: /f/* opens in the app
-f/index.html               /f/                shared-folder viewer (the one page with JS)
-f/share.js, f/share.css                       the viewer's script and styles
-f/og.jpg, f/wordmark.png                      link-preview image, footer wordmark
 ```
 
-## Shared folders (`/f/`)
+## Shared folders
 
-Desktop's Share Folder makes links like `https://arkive.tech/f/#<id>.<key>`.
-Everything after `#` stays in the browser — GitHub Pages never sees which
-share is being opened. If the app is installed, iOS opens the link in
-Desktop (via the association file); otherwise this page fetches the
-encrypted folder from the Supabase `share` function and decrypts it in the
-tab with WebCrypto. The server holds ciphertext only.
-
-This is the one exception to "no JavaScript, no external requests": the
-page talks only to the two Supabase projects named in its CSP. Links made
-by dev builds carry `?dev` and read from the dev project. Like everything
-else here, the page is noindex. The preview image is generic on purpose:
-no server can read a folder to draw a specific one (Messages gets a
-folder-specific card from the app itself).
+Desktop's shared-folder links moved to their own domain,
+`https://desktopsaves.com/f/#<id>.<key>`, served from
+`~/Projects/desktopsaves-site`. Nothing here handles them any more.
 
 ## The landing page is blank on purpose
 
