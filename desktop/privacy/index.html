@@ -13,12 +13,12 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="date">Desktop for iOS · Effective 13 October 2026</p>
+<p class="date">Desktop for iOS · Effective 8 November 2026</p>
 
 <p class="lede">Desktop is a place to keep the things you save. Your library lives on your
 device. There is no account to create, and nothing you save is tied to your identity. If you
-turn on sync, an optional Premium feature, your library is encrypted on your device before it
-leaves, so the copy we store is one we cannot read.</p>
+turn on sync, which is optional and free, your library is encrypted on your device before it
+leaves, and the key is kept apart from the copy we store.</p>
 
 <p>This policy explains exactly what stays on your phone, the few things that leave it and why,
 and who else is involved when you view something you saved. It describes the app as it actually
@@ -26,14 +26,17 @@ works, not a category of app in general.</p>
 
 <p>Desktop is published by <strong>VRKIVE LLC</strong>. "We" and "us" below mean VRKIVE LLC.</p>
 
-<h2>No account, no identifiers</h2>
+<h2>No account, and the two identifiers there are</h2>
 <p>Desktop has no sign-up, sign-in, profile or cloud library until you turn on sync, and most
-people never will. It does not assign you a user ID. It does not read your device's advertising
-identifier or vendor identifier. It contains no analytics, attribution or crash-reporting
-service, and no third-party SDKs at all.</p>
+people never will. It does not read your device's advertising identifier or vendor identifier,
+and it has no crash reporting. Two services do run inside it: <strong>RevenueCat</strong>, which
+completes purchases and tells the app whether you subscribe, and <strong>PostHog</strong>, which
+counts how the app is used. Each gives your install a random identifier of its own. Those
+identifiers are tied to you only if you sign in for sync, and neither service ever receives what
+you saved. Both are described in their own sections below.</p>
 <p><strong>Desktop does not track you</strong> as the App Store defines tracking: nothing it
-sends is linked to you or your device, and nothing is shared with data brokers or advertisers.
-We do not sell or rent information about you.</p>
+collects is combined with data from other companies' apps or websites, and nothing is shared
+with data brokers or advertisers. We do not sell or rent information about you.</p>
 
 <h2>What stays on your device</h2>
 <p>All of it, unless this policy says otherwise. Specifically:</p>
@@ -51,8 +54,9 @@ The one exception to this section is automatic topic sorting, which sends detail
 or link for classification; that is described in full below.</p>
 
 <h2>What leaves your device</h2>
-<p>Four things, in specific moments. None of them carries an identifier for you or your device.
-Sync and folder sharing, if you use them, are described in their own sections below.</p>
+<p>Four things about your library, in specific moments. None of them carries an identifier for
+you or your device. Purchases, usage analytics, sync, folder sharing and writing to us from the
+app each have a section of their own further down.</p>
 
 <h3>1. Fetching details about a link you saved</h3>
 <p>When you save a link, Desktop needs its title, creator and cover image to show you a real card
@@ -121,37 +125,38 @@ IP address and any cookies your device already holds for it, and what they do wi
 governed by <em>their</em> privacy policies rather than this one. Desktop adds no identifier of
 its own to these requests and cannot see their contents.</p>
 
-<h2>Sync (optional, Premium, end-to-end encrypted)</h2>
+<h2>Sync (optional, encrypted)</h2>
 <p>Sync keeps your library the same on every device you use. It is off until you open the Sync
-screen in the menu and sign in with Apple, and it is only offered to subscribers. Until you do
-that, nothing in this section applies to you.</p>
+screen in the menu and sign in with Apple, and it is free. Until you do that, nothing in this
+section applies to you.</p>
 <p><strong>Encrypted on your device.</strong> Before anything leaves your phone, Desktop encrypts
-it with a key that only your devices hold: your saved links with their titles, captions, creators
-and topics; your screenshots and photos saved from your own library; the frame used as a video's
-cover; your folders, their names and which saves are in them. We store that encrypted copy and
-cannot read it. Videos themselves are never uploaded and stay on the device that saved them.</p>
-<p><strong>What we can see.</strong> Encryption hides what you saved, not that you use sync. Our
-service can see an identifier for your account and for each record, whether a record is a save,
-a folder or a folder membership, when records change or are deleted, how large the encrypted
-files are, and when your devices sync.</p>
-<p><strong>The key.</strong> The key is made on your device the first time you sync and reaches
-your other devices only through iCloud Keychain. It is never sent to us. If every copy of it is
-lost, we cannot recover your synced library; the library on your phone is unaffected, and
-deleting your sync account lets you start a fresh copy from it.</p>
+it: your saved links with their titles, captions, creators and topics; your screenshots and
+photos saved from your own library; the frame used as a video's cover; your folders, their names
+and which saves are in them. We store that encrypted copy. Videos themselves are never uploaded
+and stay on the device that saved them.</p>
+<p><strong>The key.</strong> The key is not stored with your library. Our sync service derives it
+for your account from a secret kept outside the database, and sends it to your device each time
+it syncs, so there is no key to carry between devices and none to lose. A copy of the database
+on its own, from a breach or a leaked backup, cannot be read.</p>
+<p><strong>What we can see.</strong> Because our service holds the secret the key comes from, it
+can open your library, and so could we. Syncing itself never does: it moves encrypted records
+without opening them. Without the key, the service sees an identifier for your account and for
+each record, whether a record is a save, a folder or a folder membership, when records change or
+are deleted, how large the encrypted files are, and when your devices sync.</p>
 <p><strong>Signing in.</strong> Desktop asks Apple for a sign-in only, not your name or email
 address. Apple gives our sign-in service a stable identifier for you, unique to Desktop, which we
 use only to tell your encrypted library apart from everyone else's.</p>
-<p><strong>Confirming the subscription.</strong> When you sign in, and from time to time after,
-the signed transaction Apple gives your device is sent to our service so it can confirm that the
-subscription is active before accepting your data. We keep the product, its expiry and Apple's
-transaction identifier for it; it carries no payment details.</p>
+<p><strong>Your subscription, if you have one.</strong> Sync does not depend on it. Once you sign
+in, RevenueCat (see <em>Purchases and subscriptions</em>) tells our service when your
+subscription starts, renews or ends, and we keep the product and its expiry against your
+account. Nothing about payment comes with it.</p>
 <p><strong>Where it lives.</strong> On Supabase, in the United States, under an account we hold
-with them. It is reachable only through your sign-in and only while your subscription is
-active.</p>
+with them. It is reachable only through your sign-in.</p>
 <p><strong>Deleting it.</strong> Tap Delete Account on the Sync screen and everything synced is
-removed at once. Sign Out stops sync but leaves what is already there. If your subscription ends,
-sync pauses and the data is deleted 90 days later unless you subscribe again. Deleting the app
-alone does not delete the synced copy; use Delete Account first.</p>
+removed at once, together with the RevenueCat customer record and the PostHog usage history
+that carry your account identifier. Sign Out stops sync but leaves what is already there. A sync
+account that has not synced for a year may be deleted. Deleting the app alone does not delete
+the synced copy; use Delete Account first.</p>
 
 <h2>Sharing a folder</h2>
 <p>You can share any folder as a link, whether or not you subscribe. Nothing is shared until you
@@ -174,14 +179,63 @@ hosted by GitHub, which receives the visitor's network address as for any websit
 serving it and deletes the encrypted copy at its next cleanup. Anyone who added the folder to their own Desktop keeps their
 copy.</p>
 
-<h2>Subscriptions and payment</h2>
-<p>Desktop's subscription is sold through the App Store. Apple handles the entire transaction.
-We never receive or have access to your payment method, card number or billing address. The app
-only asks iOS on your device whether a subscription is currently active; that answer never leaves
-your phone, except as part of turning on sync, described above.</p>
+<h2>Purchases and subscriptions</h2>
+<p>Desktop's subscription is sold through the App Store, and Apple handles the entire
+transaction. We never receive or have access to your payment method, card number or billing
+address.</p>
+<p><strong>RevenueCat.</strong> Purchases are completed through RevenueCat, a subscription
+service we use so the app can tell whether you subscribe, including renewals, cancellations,
+refunds and offer-code redemptions that happen while the app is closed. RevenueCat receives the
+App Store's signed record of your purchases, the app version and the kind of device, and a random
+customer identifier it assigns to your install. It is also told the random identifier PostHog
+assigns (below), so the two services describe the same install, and it forwards subscription
+events such as a trial starting or a renewal to PostHog under that identifier. It never sees
+what you saved. If you sign in for sync, your sync account identifier takes the place of the
+random one, so a purchase follows your account to your other devices. RevenueCat is in the United
+States and processes this under its own privacy policy and our agreement with it.</p>
 <p>Your count of saved items is also kept in your device's keychain, so that reinstalling the app
 doesn't hand out a fresh set of free saves. It is stored only on that device, is never
 synchronised to iCloud or to us, and is a number — it contains nothing about what you saved.</p>
+
+<h2>Usage analytics</h2>
+<p>Desktop sends a short record of how it is used to PostHog, an analytics service, so we can
+tell whether the app earns its place: whether people keep saving, what they do with folders,
+and what happens at the paywall. This is on for everyone; there is no switch for it in the app,
+and we would rather say so than imply one.</p>
+<p><strong>What is sent.</strong> A named event at about ten moments: a save (with the app it
+came from, such as Instagram, and how many items), opening a saved item, creating a folder,
+sharing or receiving one, changing a sort order, opening search, seeing the paywall and how you
+left it, finishing onboarding, and sending us feedback. PostHog's library adds that the app was
+opened, installed or updated. Every event carries the app version, the size of the free
+allowance, whether you subscribe, and the device model, iOS version, language and time zone
+that PostHog's library attaches to all events, along with the network address it arrives from,
+which PostHog uses to estimate a region. <strong>No event ever carries a link, a title, a
+caption, a filename, a folder name, your message to us, or anything else you saved.</strong></p>
+<p><strong>Session replays.</strong> For one session in five, PostHog records a replay: a
+sequence of screenshots of the app as you use it. Text you type and images are masked by
+PostHog's library, and the feed of your saves is masked by Desktop everywhere it appears, so what
+remains is the shape of the screens you moved through. We use it to see where onboarding and the
+paywall lose people.</p>
+<p><strong>Who you are to it.</strong> Until you sign in for sync, PostHog knows your install by a
+random identifier. If you sign in, that identifier is tied to your sync account, so what you did
+before and after signing in is one history, and Delete Account on the Sync screen removes it.
+Deleting the app discards the identifier, and a reinstall starts a new one.</p>
+<p><strong>Where.</strong> PostHog's servers in the United States, under an account we hold with
+them.</p>
+
+<h2>Writing to us from the app</h2>
+<p>The menu's <em>Feedback &amp; Support</em> row opens a sheet for a problem, an idea or a
+question. Sending it posts the message to our <em>feedback</em> service, which stores it and
+emails it to support@arkive.tech. With your words go the facts the sheet lists on screen before
+you send: the app version and build, your device model, iOS version and language, whether you are
+on Premium or the free plan and that month's allowance, and whether sync is on. A reply address
+goes only if you type one; without it we cannot answer, but the message still reaches us.
+Nothing about your library, your sync account or your analytics identifier goes with it.</p>
+<p>To limit abuse, the service counts messages per network address for an hour, using a
+scrambled form of the address that changes every hour and is deleted after two, as folder
+sharing does. The email is delivered through Resend, an email service in the United States,
+which handles the message in order to deliver it. We keep messages until they have been dealt
+with; write to the address below if you want one deleted sooner.</p>
 
 <h2>Permissions Desktop does not ask for</h2>
 <p>Desktop requests no access to your photo library, camera, microphone, location, contacts or
@@ -196,10 +250,14 @@ you choose each one, and Desktop receives only what you shared with it.</p>
       library; delete them individually to remove their content.</li>
   <li>Delete Desktop from your phone to remove its library, media and settings entirely.</li>
 </ul>
-<p>If you never turned on sync, we hold no library and no account, so there is nothing for us to
-delete on your behalf and no account deletion request to make. If you did, Delete Account on the
-Sync screen removes everything synced immediately; no request to us is needed. A shared folder's
-encrypted copy is deleted after its link expires at 30 days. The only value that deliberately
+<p>If you never turned on sync, we hold no library and no account. What exists about your
+install is held under random identifiers: a usage history at PostHog and a purchase record at
+RevenueCat. We cannot connect either to you from the outside, which also means we cannot find
+them on request; deleting the app discards both identifiers, and a reinstall starts afresh. If
+you did turn on sync, Delete Account on the Sync screen removes everything synced immediately,
+along with the RevenueCat record and PostHog history under your account identifier; no request to
+us is needed. A shared folder's encrypted copy is deleted after its link expires at 30 days.
+Feedback you sent us is kept until it has been dealt with. The only value that deliberately
 outlives an uninstall is the lifetime save count described above.</p>
 <p>If you'd like confirmation of any of this, or want to ask what we hold about you, write to us
 at the address below.</p>
@@ -210,6 +268,21 @@ under 13. Desktop can display the pages and posts you save, which come from the 
 App Store age rating reflects that its content is not filtered by us.</p>
 
 <h2>Changes</h2>
+<p><strong>8 November 2026:</strong> three services now run inside the app where before there
+were none. Purchases are completed through RevenueCat, which receives the App Store's record of
+your purchases under a random identifier, and the app no longer sends Apple's signed transaction
+to our own service. Usage is counted by PostHog, which receives about ten named events and a
+sampled, masked session replay, never anything you saved; this replaces the statement that the
+app contained no analytics. The menu's Support row became Feedback &amp; Support, which sends
+your message and the build facts it shows you to our feedback service instead of opening your
+mail app. Delete Account now also removes the RevenueCat record and PostHog history tied to your
+account. The sections on purchases, usage analytics and writing to us describe each.</p>
+<p><strong>29 October 2026:</strong> sync is now free for every account, and its encryption
+changed. Until now the key was made on your device and never sent to us, so we could not read a
+synced library. Now our sync service derives the key for your account and holds the secret it
+comes from, so a copy of the database alone still cannot be read, but we could open your library
+if we chose to. The section on sync above describes the new arrangement. Nothing changed for a
+library that has never been synced.</p>
 <p><strong>13 October 2026:</strong> added sync, an optional Premium feature that is off until
 you sign in with Apple on the Sync screen, and folder sharing. Both are encrypted on your device
 before anything is uploaded; the new sections describe what is stored, what we can and cannot
